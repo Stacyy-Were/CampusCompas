@@ -47,9 +47,13 @@ c. Create the Database
 d. Access the Web App
 - Open your browser
 - Visit (http://localhost/CampusCompass/index.html)
-  
 
-
+### 📌 Future Improvements
+- Add school recommendation algorithm (e.g., content-based filtering)
+- Approval dashboard for admin verification
+- Email notifications (e.g., via PHPMailer or SMTP)
+- Search filters by fee, rating, distance, etc.
+- Responsive and mobile-friendly design (partially done)
 
 
         
