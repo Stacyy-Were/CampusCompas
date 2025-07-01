@@ -1,4 +1,4 @@
-## 🧭 Campus Compas — School/Institution Recommendation System
+# 🧭 Campus Compas — School/Institution Recommendation System
 
 Campus Compass is a web-based recommendation system designed to help anyone find the most suitable instutution based on preferences such as location, type, fee range and facilities.
 
