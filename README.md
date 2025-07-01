@@ -2,7 +2,9 @@
 
 Campus Compass is a web-based recommendation system designed to help anyone find the most suitable instutution based on preferences such as location, type, fee range and facilities.
 
-It also allows schhols to register and upload their licences for verification before creating an account and appearing in the system.
+It also allows schools to register and upload their licences for verification before creating an account and appearing in the system.
+
+
 
 ### 📌 **Features**
    - 🔍 School recommendation based on user preference
