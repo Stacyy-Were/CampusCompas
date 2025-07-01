@@ -17,16 +17,39 @@ It also allows schhols to register and upload their licences for verification be
 - Database: *MySQL (via phpMyAdmin)*
 - Web Server: *Apache(XAMPP)*
         
-### 🚀 How to Run the Project
+## 🚀 How to Run the Project
 1. 🖥️ Requirements
    - XAMPP (for Apache + MySQL)
    - A modern browser (e.g., Chrome)
 
 2. ⚙️ Setup Instructions
    
-a. Clone this repo
+a. Clone this repo to XAMPP's `htdocs` folder
 ```bash
-git clone https://github.com/your-username/campus-compass.git
+git clone git@github.com:Stacyy-Were/CampusCompas.git
 ```
+b. Start Apache & MySQL via the XAMPP Control Panel
+c. Create the Database
+- Go to (https://localhost/phpmyadmin)
+- Create a database named `campus`
+- Import the `campus.sql` to create the `contants` table
+  
+```bash
+  CREATE TABLE contacts (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  full_name VARCHAR(100),
+  email VARCHAR(100),
+  telephone VARCHAR(20),
+  institution VARCHAR(100),
+  license_path VARCHAR(255),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP );
+```
+d. Access the Web App
+- Open your browser
+- Visit (http://localhost/CampusCompass/index.html)
+  
+
+
+
 
         
