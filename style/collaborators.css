@@ -1,18 +1,21 @@
-body {
+* {
   margin: 0;
-  margin-top: 20px;
-  background-color: black;
-
-  /*outline: 1px solid rgb(0, 0, 0);*/
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Work Sans', sans-serif;
 }
-
+body {
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   padding: 15px 40px;
   background-color: black;
-  color: white;
 }
 .socials a {
   color: white;
@@ -20,17 +23,12 @@ nav {
   font-size: 1.2rem;
   text-decoration: none;
 }
-
 .brand {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 2rem;
-    color: white;
-    font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
 }
-
 .nav-buttons a {
   margin-left: 15px;
   padding: 10px 20px;
@@ -39,14 +37,90 @@ nav {
   border-radius: 25px;
   text-decoration: none;
   font-size: 0.9rem;
+  transition: all 0.2s ease;
   font-family: Arial, Helvetica, sans-serif;
 }
-
 .nav-buttons a:hover {
-    background-color: #ef81d6;
-    transform: scale(1.05);
+  background-color: #ef81d6;
+  transform: scale(1.05);
 }
 
-/*.nav-buttons a:active {
-    color: #ff8000;
-}*/
+.small-text{
+  font-style: italic;
+}
+.form-container {
+  max-width: 500px;
+  width: 90%;
+  background: linear-gradient(#212121, #212121) padding-box,
+              linear-gradient(145deg, transparent 35%,#ff8000, #ef81d6) border-box;
+  border: 2px solid transparent;
+  padding: 32px 24px;
+  margin: 40px auto;
+  font-size: 14px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  margin-bottom: 5px;
+  color: #b0b0b0;
+  font-weight: 600;
+  font-size: 13px;
+}
+.form-group input,
+.form-group textarea {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #414141;
+  background-color: transparent;
+  color: white;
+  resize: vertical;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #ff8000;
+}
+.form-submit-btn {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #313131;
+  border: 1px solid #414141;
+  color: #ccc;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.form-submit-btn:hover {
+  background-color: #fff;
+  color: black;
+}
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  }
+  .nav-buttons {
+    margin-top: 10px;
+  }
+  .nav-buttons a {
+    margin: 5px;
+    font-size: 0.85rem;
+    padding: 8px 16px;
+  }
+  .brand {
+    font-size: 1.5rem;
+  }
