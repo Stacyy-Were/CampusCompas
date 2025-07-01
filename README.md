@@ -48,7 +48,7 @@ c. Create the Database
 ```
 d. Access the Web App
 - Open your browser
-- Visit (http://localhost/CampusCompass/index.html)
+- Visit (http://localhost/CampusCompas/index.html)
 
 ### 📌 Future Improvements
 - Add school recommendation algorithm (e.g., content-based filtering)
