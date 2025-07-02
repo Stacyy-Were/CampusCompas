@@ -57,5 +57,5 @@ d. Access the Web App
 - Search filters by fee, rating, distance, etc.
 - Responsive and mobile-friendly design (partially done)
 
-
+Admin panel (http://localhost/CampusCompas/admin/admin.php)
         
