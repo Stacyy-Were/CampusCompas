@@ -42,27 +42,36 @@
     <form class="form" action="submit.php" method="POST" enctype="multipart/form-data">
       <div class="form-group">
         <label>Full Name</label>
-        <input type="text" name="full_name" required>
+        <input type="text" name="full_name" required
+        placeholder="e.g John Doe"
+        title="Enter your full name">
       </div>
 
       <div class="form-group">
         <label>School Email</label>
-        <input type="email" name="email" required>
+        <input type="email" name="email" required
+        placeholder="e.g redroseacademy@gmail.com"
+        title="Enter a valid school email address">
       </div>
 
       <div class="form-group">
         <label>Telephone Number</label>
-        <input type="tel" name="telephone" required>
+        <input type="tel" name="telephone" required
+        placeholder="e.g +254712345678"
+        title="Enter a valid telephone number">
       </div>
 
       <div class="form-group">
         <label>Institution Name</label>
-        <input type="text" name="institution" required>
+        <input type="text" name="institution" required
+        placeholder="e.g Red Rose Academy"
+        title="Enter the name of your institution">
       </div>
 
       <div class="form-group">
-        <label>Upload License (PDF, JPG, PNG)</label>
+        <label>Upload License</label>
         <input type="file" name="license" accept=".pdf,.jpg,.jpeg,.png" required>
+        <small style="color: gray; font-size: 0.9em;">Accepted formats: PDF, JPG, JPEG, PNG (Max: 5MB)</small>
       </div>
 
       <button type="submit" class="form-submit-btn" value="Submit">Register School</button>
