@@ -9,7 +9,7 @@ It also allows schools to register and upload their licences for verification be
 ### 📌 **Features**
    - 🔍 School recommendation based on user preference
    - 🏫 Verified school registration by admins (with license upload)
-   - 📋 Admil panel (School info update)
+   - 📋 Admin panel (School info update)
    - 📁 Data stored securely on MySQL
    - 📬 Future intergration for email notifications and approval system
 
