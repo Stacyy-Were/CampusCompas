@@ -32,15 +32,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $file_extension = strtolower(pathinfo($license_name, PATHINFO_EXTENSION));
         $file_size = $_FILES['license']['size'];
         $allowed_types = ['pdf', 'jpg', 'jpeg', 'png'];
-        $max_file_size = 5 * 1024 * 1024;
+        $max_file_size = 5 * 1024 * 1024; //the 5mb limit
+
+        // Allow only these extensions
+        $allowed_extensions = ['pdf', 'jpg', 'jpeg', 'png'];
 
         if (!in_array($file_extension, $allowed_types)) {
-            die("Invalid file type.");
+            die("Invalid file type. Only PDF, JPG, JPEG, and PNG files are allowed.");
         }
         if ($file_size > $max_file_size) {
-            die("File too large.");
+            die("File too large. Maximum file size is 5MB.");
         }
 
+        // Generate a unique name for the file to avoid conflicts
+        // Use uniqid() to create a unique name based on the current time in microseconds
         $unique_name = uniqid("license_", true) . "." . $file_extension;
         $license_path = "uploads/" . $unique_name;
 
