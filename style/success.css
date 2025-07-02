@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  margin-top: 20px;
+  background-color: #ff8000;
+
+  /*outline: 1px solid rgb(0, 0, 0);*/
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  /*padding: 15px 40px;*/
+  background-color: #ff8000;
+  color: white;
+}
+.socials a {
+  color: white;
+  margin-right: 15px;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/*.nav-buttons a {
+  margin-left: 15px;
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: Arial, Helvetica, sans-serif;
+}*/
+
+.nav-buttons a:hover {
+    background-color: #ef81d6;
+    transform: scale(1.05);
+}
+
+.hover-text { 
+    font-size: 35px;
+    font-style: italic;
+    text-align: center;
+    color: aliceblue;
+    margin-top: 250px;
+    transition: all 1.5s ease-in-out;
+
+}
+
+p {
+    font-family: "Work Sans", sans-serif;
+    color: aliceblue;
+    font-size: 45px;
+    font-weight: 400;
+    text-align: center;
+    font-stretch: 100%;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-indent: 0px;
+}
+
+/*.hover-text {
+    color:white;
+    transition: all 1.5s ease-in-out;
+}*/
+
+.hover-text:hover {
+    background: linear-gradient(90deg, rgb(71, 236, 42), #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px; /* optional spacing */
+}
+
+.search a {
+  margin-left: 0; /* remove if only one button */
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.search a:hover {
+    background-color: #26ef14;
+    transform: scale(1.05);
+}
+
+.nav-buttons a {
+  margin-left: 1rem;
+  padding: 0.6em 1.2em;
+  background-color: white;
+  color: black;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background 0.2s, transform 0.2s;
+}
+
+/* Responsive styles for nav buttons */
+@media (max-width: 600px) {
+  .nav-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 1em;
+  }
+  .nav-buttons a {
+    margin: 0.5em 0 0 0;
+    width: 100%;
+    text-align: left;
+    font-size: 1.1rem;
+    padding: 0.8em 1em;
+  }
+}
