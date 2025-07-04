@@ -51,7 +51,7 @@ d. Access the Web App
 - Visit (http://localhost/CampusCompas/index.html)
 
 ### 📌 Future Improvements
-- Add school recommendation algorithm (e.g., content-based filtering)
+- Add school recommendation algorithm (content-based filtering)
 - Approval dashboard for admin verification
 - Email notifications (e.g., via PHPMailer or SMTP)
 - Search filters by fee, rating, distance, etc.
