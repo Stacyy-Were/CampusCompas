@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Compas | School Admin Register</title>
+
+  <link rel="stylesheet" href="../style/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="socials">
+      <a href="https://github.com/Stacyy-Were" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://pin.it/4jJTdSgis" target="_blank"><i class="fab fa-pinterest"></i></a>
+      <a href="https://www.instagram.com/stacy_.were" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/+254115018697" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <div class="brand">Campus Compas</div>
+
+    <div class="nav-buttons">
+      <a href="home.html" class="active">HOME</a>
+      <a href="#">SCHOOLS</a>
+      <a href="#">CONTACTS</a>
+    </div>
+  </nav>
+
+  <!-- Signup Form -->
+  <div class="form-container">
+    <p class="small-text">
+      Please fill out the form below to register your Institution on the Campus Compas platform.  
+      This information helps us verify and approve institutions.  
+      Upload a valid license document to complete your registration.  
+      Once verified, you’ll receive an approval email to create your account.
+    </p>
+
+    <form class="form" id="registration-form">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" name="full_name" required placeholder="e.g John Doe">
+      </div>
+
+      <div class="form-group">
+        <label>School Email</label>
+        <input type="email" name="email" required placeholder="e.g redroseacademy@gmail.com">
+      </div>
+
+      <div class="form-group">
+        <label>Telephone Number</label>
+        <input type="tel" name="telephone" required placeholder="e.g +254712345678">
+      </div>
+
+      <div class="form-group">
+        <label>Institution Name</label>
+        <input type="text" name="institution" required placeholder="e.g Red Rose Academy">
+      </div>
+
+      <div class="form-group">
+        <label>Upload License</label>
+        <input type="file" name="license" accept=".pdf,.jpg,.jpeg,.png" required>
+        <small style="color: gray; font-size: 0.9em;">Accepted formats: PDF, JPG, JPEG, PNG (Max: 5MB)</small>
+      </div>
+
+      <button type="submit" class="form-submit-btn">Register School</button>
+      <p id="form-status" style="margin-top:10px;"></p>
+    </form>
+  </div>
+
+  <script>
+    const supabase = supabase.createClient(
+      'https://lscliptkqtxcdmcdwfdv.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxzY2xpcHRrcXR4Y2RtY2R3ZmR2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE2ODQwNzgsImV4cCI6MjA2NzI2MDA3OH0.sjfNdHzaXYZUW6L2RoeQlF8931d3xebXHhn9OyaVrpA'
+    );
+
+    // Form submission
+    document.getElementById('registration-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const status = document.getElementById('form-status');
+      status.textContent = 'Submitting...';
+
+      const form = e.target;
+      const full_name = form.full_name.value;
+      const email = form.email.value;
+      const telephone = form.telephone.value;
+      const institution = form.institution.value;
+      const file = form.license.files[0];
+
+      if (!file) {
+        status.textContent = 'Please upload a license file.';
+        return;
+      }
+
+      // Upload file to Supabase Storage
+      const fileName = `${Date.now()}_${file.name}`;
+      const { data: uploadData, error: uploadError } = await supabase.storage
+        .from('licenses') // Your bucket name
+        .upload(fileName, file);
+
+      if (uploadError) {
+        console.error(uploadError);
+        status.textContent = '❌ Failed to upload file.';
+        return;
+      }
+
+      const { data: publicUrlData } = supabase.storage
+        .from('licenses')
+        .getPublicUrl(fileName);
+
+      const license_path = publicUrlData.publicUrl;
+
+      // Save the form data to the 'contacts' table
+      const { error: insertError } = await supabase.from('contacts').insert([{
+        full_name,
+        email,
+        telephone,
+        institution,
+        license_path
+      }]);
+
+      if (insertError) {
+        console.error(insertError);
+        status.textContent = '❌ Failed to register school.';
+      } else {
+        status.textContent = '✅ School registered successfully!';
+        form.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>
