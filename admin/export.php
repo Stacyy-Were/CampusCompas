@@ -1,5 +1,5 @@
 <?php
-// Database connection
+// Database connection but this was for xampp/phpmyadmin and exports the db contacts as excel files 
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -26,7 +26,7 @@ $result = $conn->query($sql);
 
 if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        // ✅ Force Excel to treat telephone as text
+        // Excel to treat telephone as text
         $telephone = '="' . $row['telephone'] . '"';
 
         fputcsv($output, [
