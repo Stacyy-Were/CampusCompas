@@ -26,7 +26,8 @@ It also allows schools to register and upload their licences for verification be
    npm install
    ```
    
-3. ⚙️ Setup Instructions
+3. ⚙️ Create a Supabse Project
+   - Go to (Supabase.io)
    
 a. Clone this repo to XAMPP's `htdocs` folder
 ```bash
