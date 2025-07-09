@@ -1,182 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Campus Compas | School Admin Register</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Compas | School Admin Register</title>
 
-  <link rel="stylesheet" href="style/collab.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="style/collab.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+  </head>
 
-<body>
-  <header>
-    <!-- Navigation Bar -->
-    <nav>
-      <div class="socials">
-        <a href="https://github.com/Stacyy-Were" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://pin.it/4jJTdSgis" target="_blank"><i class="fab fa-pinterest"></i></a>
-        <a href="https://www.instagram.com/stacy_.were" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/+254115018697" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <body>
+    <header>
+      <!-- Navigation Bar -->
+      <nav>
+        <div class="socials">
+          <a href="https://github.com/Stacyy-Were" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://pin.it/4jJTdSgis" target="_blank"><i class="fab fa-pinterest"></i></a>
+          <a href="https://www.instagram.com/stacy_.were" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/+254115018697" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      
+
+      <div class="brand">Campus Compass</div>
+
+      <div class="nav-buttons">
+        <a href="index.html" class="active">HOME</a>
+        <a href="#">SCHOOLS</a>
+        <a href="#">CONTACTS</a>
       </div>
 
-<!-- ...existing code... -->
-<div class="brand">Campus Compas</div>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu" tabindex="0">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
 
-<div class="nav-buttons">
-  <a href="index.html" class="active">HOME</a>
-  <a href="#">SCHOOLS</a>
-  <a href="#">CONTACTS</a>
-</div>
+      <nav class="hamburger-menu" id="hamburger-menu" aria-label="Mobile menu">
+        <a href="index.html" class="active">HOME</a>
+        <a href="#">SCHOOLS</a>
+        <a href="#">CONTACTS</a>
+      </nav>
 
-<button class="hamburger" onclick="toggleMenu()" aria-label="Open menu" tabindex="0">
-  <i class="fa-solid fa-bars" aria-hidden="true"></i>
-</button>
+      <div class="overlay" onclick="toggleMenu()" tabindex="-1"></div>
 
-<nav class="hamburger-menu" id="hamburger-menu" aria-label="Mobile menu">
-  <a href="index.html" class="active">HOME</a>
-  <a href="#">SCHOOLS</a>
-  <a href="#">CONTACTS</a>
-</nav>
+      <script>
+        function toggleMenu() {
+          document.querySelector('.hamburger').classList.toggle('active');
+          document.getElementById('hamburger-menu').classList.toggle('active');
+          document.querySelector('.overlay').classList.toggle('active');
+        }
+      </script>
+    </header>
 
-<div class="overlay" onclick="toggleMenu()" tabindex="-1"></div>
+    <!-- License Upload Form -->
+    <div class="form-container">
+      <p class="small-text">
+        Please fill out the form below to register your Institution on the Campus Compas platform.  
+        This information helps us verify and approve institutions.  
+        Upload a valid license document to complete your registration.  
+        Once verified, you’ll receive an approval email to create your account.
+      </p>
 
-<script>
-  function toggleMenu() {
-    document.querySelector('.hamburger').classList.toggle('active');
-    document.getElementById('hamburger-menu').classList.toggle('active');
-    document.querySelector('.overlay').classList.toggle('active');
-  }
-</script>
-<!-- ...existing code... -->  </header>
+      <form class="form" id="registration-form">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" name="full_name" required placeholder="e.g John Doe">
+        </div>
 
-  <!-- Signup Form -->
-  <div class="form-container">
-    <p class="small-text">
-      Please fill out the form below to register your Institution on the Campus Compas platform.  
-      This information helps us verify and approve institutions.  
-      Upload a valid license document to complete your registration.  
-      Once verified, you’ll receive an approval email to create your account.
-    </p>
+        <div class="form-group">
+          <label>School Email</label>
+          <input type="email" name="email" required placeholder="e.g redroseacademy@gmail.com">
+        </div>
 
-    <form class="form" id="registration-form">
-      <div class="form-group">
-        <label>Full Name</label>
-        <input type="text" name="full_name" required placeholder="e.g John Doe">
-      </div>
+        <div class="form-group">
+          <label>Telephone Number</label>
+          <input type="tel" name="telephone" required placeholder="e.g +254712345678">
+        </div>
 
-      <div class="form-group">
-        <label>School Email</label>
-        <input type="email" name="email" required placeholder="e.g redroseacademy@gmail.com">
-      </div>
+        <div class="form-group">
+          <label>Institution Name</label>
+          <input type="text" name="institution" required placeholder="e.g Red Rose Academy">
+        </div>
 
-      <div class="form-group">
-        <label>Telephone Number</label>
-        <input type="tel" name="telephone" required placeholder="e.g +254712345678">
-      </div>
+        <div class="form-group">
+          <label>Upload License</label>
+          <input type="file" name="license" accept=".pdf,.jpg,.jpeg,.png" required>
+          <small style="color: gray; font-size: 0.9em;">Accepted formats: PDF, JPG, JPEG, PNG (Max: 5MB)</small>
+        </div>
 
-      <div class="form-group">
-        <label>Institution Name</label>
-        <input type="text" name="institution" required placeholder="e.g Red Rose Academy">
-      </div>
+        <button type="submit" class="form-submit-btn">Register School</button>
+        <p id="form-status" style="margin-top:10px;"></p>
+      </form>
+    </div>
 
-      <div class="form-group">
-        <label>Upload License</label>
-        <input type="file" name="license" accept=".pdf,.jpg,.jpeg,.png" required>
-        <small style="color: gray; font-size: 0.9em;">Accepted formats: PDF, JPG, JPEG, PNG (Max: 5MB)</small>
-      </div>
+    <!-- Call supabase first -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
-      <button type="submit" class="form-submit-btn">Register School</button>
-      <p id="form-status" style="margin-top:10px;"></p>
-    </form>
-  </div>
+    <!-- Run Script 2nd -->
+    <script>
+      const supabaseClient = supabase.createClient(
+        'https://lscliptkqtxcdmcdwfdv.supabase.co',
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxzY2xpcHRrcXR4Y2RtY2R3ZmR2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE2ODQwNzgsImV4cCI6MjA2NzI2MDA3OH0.sjfNdHzaXYZUW6L2RoeQlF8931d3xebXHhn9OyaVrpA'
+      );
 
-  <!-- Call supabase first -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+      const form = document.getElementById("registration-form");
+      const status = document.getElementById("form-status");
 
-  <!-- Run Script 2nd -->
-  <script>
-    const supabaseClient = supabase.createClient(
-      'https://lscliptkqtxcdmcdwfdv.supabase.co',
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxzY2xpcHRrcXR4Y2RtY2R3ZmR2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE2ODQwNzgsImV4cCI6MjA2NzI2MDA3OH0.sjfNdHzaXYZUW6L2RoeQlF8931d3xebXHhn9OyaVrpA'
-    );
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        status.innerText = "Submitting...";
 
-    const form = document.getElementById("registration-form");
-    const status = document.getElementById("form-status");
+        const full_name = form.full_name.value;
+        const email = form.email.value;
+        const telephone = form.telephone.value;
+        const institution = form.institution.value;
+        const file = form.license.files[0];
 
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      status.innerText = "Submitting...";
+        if (!file) {
+          alert("Please upload a license file.");
+          status.innerText = "";
+          return;
+        }
 
-      const full_name = form.full_name.value;
-      const email = form.email.value;
-      const telephone = form.telephone.value;
-      const institution = form.institution.value;
-      const file = form.license.files[0];
+        // Check file size (max 5MB)
+        if (file.size > 5 * 1024 * 1024) {
+          alert("File size exceeds 5MB limit.");
+          status.innerText = "File size exceeds 5MB.";
+          return;
+        }
 
-      if (!file) {
-        alert("Please upload a license file.");
-        status.innerText = "";
-        return;
-      }
+        const filename = Date.now() + "_" + file.name;
 
-      // Check file size (max 5MB)
-      if (file.size > 5 * 1024 * 1024) {
-        alert("File size exceeds 5MB limit.");
-        status.innerText = "File size exceeds 5MB.";
-        return;
-      }
+        // Upload file to Supabase Storage
+        const { data: uploadData, error: uploadError } = await supabaseClient
+          .storage
+          .from("licenses") //matches the supabase bucket name
+          .upload(filename, file, { upsert: true });
 
-      const filename = Date.now() + "_" + file.name;
+        if (uploadError) {
+          console.error("Upload failed:", uploadError);
+          status.innerText = "Upload failed. Please try again.";
+          return;
+        }
 
-      // Upload file to Supabase Storage
-      const { data: uploadData, error: uploadError } = await supabaseClient
-        .storage
-        .from("licenses") //matches the supabase bucket name
-        .upload(filename, file, { upsert: true });
+        const { data: publicData, error: publicUrlError } = await supabaseClient
+          .storage
+          .from("licenses")
+          .getPublicUrl(filename);
 
-      if (uploadError) {
-        console.error("Upload failed:", uploadError);
-        status.innerText = "Upload failed. Please try again.";
-        return;
-      }
+        if (publicUrlError) {
+          console.error("Failed to get public URL:", publicUrlError);
+          status.innerText = "Failed to get file URL.";
+          return;
+        }
 
-      const { data: publicData, error: publicUrlError } = await supabaseClient
-        .storage
-        .from("licenses")
-        .getPublicUrl(filename);
+        const license_path = publicData.publicUrl;
 
-      if (publicUrlError) {
-        console.error("Failed to get public URL:", publicUrlError);
-        status.innerText = "Failed to get file URL.";
-        return;
-      }
+        // Insert record to contacts table
+        const { data: insertData, error: insertError } = await supabaseClient
+          .from("contacts")
+          .insert([
+            {
+              full_name,
+              email,
+              telephone,
+              institution,
+              license_path,
+            }
+          ]);
 
-      const license_path = publicData.publicUrl;
+        if (insertError) {
+          console.error("Insert error:", insertError);
+          status.innerText = "Insert failed. Please try again.";
+          return;
+        }
 
-      // Insert record to contacts table
-      const { data: insertData, error: insertError } = await supabaseClient
-        .from("contacts")
-        .insert([
-          {
-            full_name,
-            email,
-            telephone,
-            institution,
-            license_path,
-          }
-        ]);
-
-      if (insertError) {
-        console.error("Insert error:", insertError);
-        status.innerText = "Insert failed. Please try again.";
-        return;
-      }
-
-      status.innerText = "Registered successfully!";
-      form.reset();
-    });
-  </script>
-</body>
+        status.innerText = "Registered successfully!";
+        form.reset();
+      });
+    </script>
+  </body>
 </html>
