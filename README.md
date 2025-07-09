@@ -27,7 +27,7 @@ It also allows schools to register and upload their licences for verification be
    ```
    
 3. ⚙️ Create a Supabse Project
-   - Go to (Supabase.io)
+   - Go to (https://supabase.com/)
    
 a. Clone this repo to XAMPP's `htdocs` folder
 ```bash
