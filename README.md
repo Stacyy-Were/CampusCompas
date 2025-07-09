@@ -8,23 +8,25 @@ It also allows schools to register and upload their licences for verification be
 
 ### 📌 **Features**
    - 🔍 School recommendation based on user preference
-   - 🏫 Verified school registration by admins (with license upload)
+   - 📁 File upload
    - 📋 Admin panel (School info update)
-   - 📁 Data stored securely on MySQL
+   - 🔐 Authentication with Supabase
    - 📬 Future intergration for email notifications and approval system
+   - 🔄 Automatic deployment from Git
+   - 📊 CRUD operations
 
 ### 🛠️ **Tech Stack**
-- Frontend: *HTML, CSS*
-- Backend: *PHP*
-- Database: *MySQL (via phpMyAdmin)*
-- Web Server: *Apache(XAMPP)*
+- Frontend: *HTML, CSS, JS*
+- Backend: *Supabase* (https://supabase.com/)
+- Deployment: *Netlify* (https://netlify.com/)
         
 ## 🚀 How to Run the Project
-1. 🖥️ Requirements
-   - XAMPP (for Apache + MySQL)
-   - A modern browser (e.g., Chrome)
-
-2. ⚙️ Setup Instructions
+1. 🖥️ Install Dependencies
+   ```bash
+   npm install
+   ```
+   
+3. ⚙️ Setup Instructions
    
 a. Clone this repo to XAMPP's `htdocs` folder
 ```bash
