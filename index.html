@@ -38,7 +38,7 @@
         </button>
 
         <nav class="hamburger-menu" id="hamburger-menu" aria-label="Mobile menu">
-          <a href="index.html">COLLABORATIONS</a>
+          <a href="collab.html">COLLABORATIONS</a>
           <a href="#">SCHOOLS</a>
           <a href="#">CONTACTS</a>
         </nav>
@@ -62,5 +62,14 @@
         document.querySelector('.overlay').classList.toggle('active');
       }
     </script>
+
+    <script>
+      function toggleMenu() {
+        document.querySelector('.hamburger').classList.toggle('active');
+        document.getElementById('hamburger-menu').classList.toggle('active');
+        document.querySelector('.overlay').classList.toggle('active');
+      }
+    </script>
 </body>
 </html>
+
