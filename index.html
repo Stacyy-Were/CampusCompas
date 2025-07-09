@@ -1,75 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 
-    <a href="https://www.flaticon.com/free-icons/whatsapp" title="whatsapp icons">Whatsapp icons created by cobynecz - Flaticon</a>
-    <a href="https://www.flaticon.com/free-icons/instagram" title="instagram icons">Instagram icons created by Freepik - Flaticon</a>
-    -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="style/index.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-    </style>    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Compas | School Admin Register</title>
 
-    <title>Home Page</title>
+  <link rel="stylesheet" href="../style/index.css">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 </head>
+
 <body>
 
-    <nav>
-        <div class="socials">
-          <a href="https://github.com/Stacyy-Were" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://pin.it/4jJTdSgis" target="_blank"><i class="fab fa-pinterest"></i></a>
-          <a href="https://www.instagram.com/stacy_.were" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://wa.me/+254115018697" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        </div>
-
-        <div class="brand">Campus Compas</div>
-
-        <div class="nav-buttons">
-          <a href="index.html">COLLABORATIONS</a>
-          <a href="#">SCHOOLS</a>
-          <a href="#">CONTACTS</a>
-        </div>
-
-        <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu" tabindex="0">
-          <i class="fa-solid fa-bars" aria-hidden="true"></i>
-        </button>
-
-        <nav class="hamburger-menu" id="hamburger-menu" aria-label="Mobile menu">
-          <a href="collab.html">COLLABORATIONS</a>
-          <a href="#">SCHOOLS</a>
-          <a href="#">CONTACTS</a>
-        </nav>
-
-        <div class="overlay" onclick="toggleMenu()" tabindex="-1"></div>
-    </nav>
-
-    <div>
-        <p class="small-text">Your future, amplified.</p>
-        <p class="hover-text"><strong>WE DON’T JUST RECOMMEND SCHOOLS,<br> WE RECOMMEND FUTURES.</strong></p>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="socials">
+      <a href="https://github.com/Stacyy-Were" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://pin.it/4jJTdSgis" target="_blank"><i class="fab fa-pinterest"></i></a>
+      <a href="https://www.instagram.com/stacy_.were" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/+254115018697" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 
-    <div class="search">
-        <a href="#search-page">Let's Make Moves</a>
+    <div class="brand">Campus Compas</div>
+
+    <div class="nav-buttons">
+      <a href="home.html" class="active">HOME</a>
+      <a href="#">SCHOOLS</a>
+      <a href="#">CONTACTS</a>
     </div>
+  </nav>
 
-    <script>
-      function toggleMenu() {
-        document.querySelector('.hamburger').classList.toggle('active');
-        document.getElementById('hamburger-menu').classList.toggle('active');
-        document.querySelector('.overlay').classList.toggle('active');
-      }
-    </script>
+  <!-- Signup Form -->
+  <div class="form-container">
+    <p class="small-text">  Please fill out the form below to register your Institution on the Campus Compas platform.  
+                            This information helps us verify and approve institutions.  
+                            Upload a valid license document to complete your registration.  
+                            Once reviewed, you’ll receive an approval email to create your account.</p>
 
-    <script>
-      function toggleMenu() {
-        document.querySelector('.hamburger').classList.toggle('active');
-        document.getElementById('hamburger-menu').classList.toggle('active');
-        document.querySelector('.overlay').classList.toggle('active');
-      }
-    </script>
+    <form class="form" action="submit.php" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" name="full_name" required
+        placeholder="e.g John Doe"
+        title="Enter your full name">
+      </div>
+
+      <div class="form-group">
+        <label>School Email</label>
+        <input type="email" name="email" required
+        placeholder="e.g redroseacademy@gmail.com"
+        title="Enter a valid school email address">
+      </div>
+
+      <div class="form-group">
+        <label>Telephone Number</label>
+        <input type="tel" name="telephone" required
+        placeholder="e.g +254712345678"
+        title="Enter a valid telephone number">
+      </div>
+
+      <div class="form-group">
+        <label>Institution Name</label>
+        <input type="text" name="institution" required
+        placeholder="e.g Red Rose Academy"
+        title="Enter the name of your institution">
+      </div>
+
+      <div class="form-group">
+        <label>Upload License</label>
+        <input type="file" name="license" accept=".pdf,.jpg,.jpeg,.png" required>
+        <small style="color: gray; font-size: 0.9em;">Accepted formats: PDF, JPG, JPEG, PNG (Max: 5MB)</small>
+      </div>
+
+      <button type="submit" class="form-submit-btn" value="Submit">Register School</button>
+    </form>
+  </div>
+
 </body>
 </html>
-
