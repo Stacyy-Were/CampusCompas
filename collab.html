@@ -138,8 +138,8 @@
           .upload(filename, file, { upsert: true });
 
         if (uploadError) {
-          console.error("Upload failed:", uploadError);
-          status.innerText = "Upload failed. Please try again.";
+          console.error(`Upload failed for file "${filename}":`, uploadError);
+          status.innerText = "File upload failed. Please check your internet connection or try a different file format.";
           return;
         }
 
