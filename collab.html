@@ -79,7 +79,7 @@
 
         <div class="form-group">
           <label>Institution Name</label>
-          <input type="text" name="institution" required placeholder="e.g Red Rose Academy">
+          <input type="text" name="school" required placeholder="e.g Red Rose Academy">
         </div>
 
         <div class="form-group">
@@ -113,7 +113,7 @@
         const full_name = form.full_name.value;
         const email = form.email.value;
         const telephone = form.telephone.value;
-        const institution = form.institution.value;
+        const school = form.school.value;
         const file = form.license.files[0];
 
         if (!file) {
@@ -164,7 +164,7 @@
               full_name,
               email,
               telephone,
-              institution,
+              school,
               license_path,
             }
           ]);
