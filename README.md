@@ -17,21 +17,11 @@ It also allows schools to register and upload their licences for verification be
 
 ### 🛠️ **Tech Stack**
 - Frontend: *HTML, CSS, JS*
-- Backend: *Supabase* (https://supabase.com/)
-- Deployment: *Netlify* (https://netlify.com/)
+- Backend: *PHPMYADMIN* ([https://www.phpmyadmin.net/])
+- Deployment: *XAMPP* ([https://www.apachefriends.org/download.html])
         
 ## 🚀 How to Run the Project
-1. 🖥️ Install Dependencies
-   ```bash
-   npm install
-   ```
-   
-3. ⚙️ Create a Supabse Project
-   - Go to (https://supabase.com/)
-   - Ctreate a new project
-   - Copy the Supabase URL and the anon/public API key
-
-4. 
+1. 
    
 a. Clone this repo to XAMPP's `htdocs` folder
 ```bash
