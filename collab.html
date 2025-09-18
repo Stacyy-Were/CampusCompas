@@ -26,8 +26,8 @@
 
       <div class="nav-buttons">
         <a href="index.html" class="active">HOME</a>
-        <a href="#">SCHOOLS</a>
-        <a href="#">CONTACTS</a>
+        <a href="preferences.html">SCHOOLS</a>
+        <a href="contacts.php">CONTACTS</a>
       </div>
 
       <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu" tabindex="0">
@@ -36,8 +36,8 @@
 
       <nav class="hamburger-menu" id="hamburger-menu" aria-label="Mobile menu">
         <a href="index.html" class="active">HOME</a>
-        <a href="#">SCHOOLS</a>
-        <a href="#">CONTACTS</a>
+        <a href="preferences.html">SCHOOLS</a>
+        <a href="contacts.php">CONTACTS</a>
       </nav>
 
       <div class="overlay" onclick="toggleMenu()" tabindex="-1"></div>
@@ -61,7 +61,7 @@
         Once verified, you’ll receive an approval email to create your account.
       </p>
 
-      <form class="form" id="registration-form">
+      <form class="form" id="registration-form" action="register_school.php" method="POST" enctype="multipart/form-data">
         <div class="form-group">
           <label>Full Name</label>
           <input type="text" name="full_name" required placeholder="e.g John Doe">
@@ -92,92 +92,5 @@
         <p id="form-status" style="margin-top:10px;"></p>
       </form>
     </div>
-
-    <!-- Call supabase first -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-
-    <!-- Run Script 2nd -->
-    <script>
-      const supabaseClient = supabase.createClient(
-        'https://lscliptkqtxcdmcdwfdv.supabase.co',
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxzY2xpcHRrcXR4Y2RtY2R3ZmR2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE2ODQwNzgsImV4cCI6MjA2NzI2MDA3OH0.sjfNdHzaXYZUW6L2RoeQlF8931d3xebXHhn9OyaVrpA'
-      );
-
-      const form = document.getElementById("registration-form");
-      const status = document.getElementById("form-status");
-
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        status.innerText = "Submitting...";
-
-        const full_name = form.full_name.value;
-        const email = form.email.value;
-        const telephone = form.telephone.value;
-        const school = form.school.value;
-        const file = form.license.files[0];
-
-        if (!file) {
-          alert("Please upload a license file.");
-          status.innerText = "";
-          return;
-        }
-
-        // Check file size (max 5MB)
-        if (file.size > 5 * 1024 * 1024) {
-          alert("File size exceeds 5MB limit.");
-          status.innerText = "File size exceeds 5MB.";
-          return;
-        }
-
-        const filename = Date.now() + "_" + file.name;
-
-        // Upload file to Supabase Storage
-        const { data: uploadData, error: uploadError } = await supabaseClient
-          .storage
-          .from("licenses") //matches the supabase bucket name
-          .upload(filename, file, { upsert: true });
-
-        if (uploadError) {
-          console.error(`Upload failed for file "${filename}":`, uploadError);
-          status.innerText = "File upload failed. Please check your internet connection or try a different file format.";
-          return;
-        }
-
-        const { data: publicData, error: publicUrlError } = await supabaseClient
-          .storage
-          .from("licenses")
-          .getPublicUrl(filename);
-
-        if (publicUrlError) {
-          console.error("Failed to get public URL:", publicUrlError);
-          status.innerText = "Failed to get file URL.";
-          return;
-        }
-
-        const license_path = publicData.publicUrl;
-
-        // Insert record to contacts table
-        const { data: insertData, error: insertError } = await supabaseClient
-          .from("contacts")
-          .insert([
-            {
-              full_name,
-              email,
-              telephone,
-              school,
-              license_path,
-            }
-          ]);
-
-        if (insertError) {
-          console.error("Insert error:", insertError);
-          status.innerText = "Insert failed. Please try again.";
-          return;
-        }
-
-        status.innerText = "Registered successfully!";
-        form.reset();
-      });
-    </script>
   </body>
 </html>
