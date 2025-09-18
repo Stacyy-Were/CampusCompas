@@ -79,6 +79,44 @@ $row = $result->fetch_assoc();
             <button type="submit">Update School</button>
         </form>
     </div>
+
+    <header>
+      <!-- Nav Bar -->
+      <nav>
+        <div class="socials">
+          <a href="https://github.com/Stacyy-Were" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://pin.it/4jJTdSgis" target="_blank"><i class="fab fa-pinterest"></i></a>
+          <a href="https://www.instagram.com/stacy_.were" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/+254115018697" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      
+
+
+      <div class="nav-buttons">
+        <a href="index.html" class="active">HOME</a>
+        <a href="preferences.html">SCHOOLS</a>
+        <a href="contacts.php">CONTACTS</a>
+      </div>
+
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu" tabindex="0">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <nav class="hamburger-menu" id="hamburger-menu" aria-label="Mobile menu">
+        <a href="index.html" class="active">HOME</a>
+        <a href="preferences.html">SCHOOLS</a>
+        <a href="contacts.php">CONTACTS</a>
+      </nav>
+
+      <div class="overlay" onclick="toggleMenu()" tabindex="-1"></div>
+
+      <script>
+        function toggleMenu() {
+          document.querySelector('.hamburger').classList.toggle('active');
+          document.getElementById('hamburger-menu').classList.toggle('active');
+          document.querySelector('.overlay').classList.toggle('active');
+        }
+      </script>
 </body>
 </html>
 <?php $conn->close(); ?>

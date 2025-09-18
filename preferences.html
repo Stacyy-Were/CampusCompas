@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Compas | School Preferences</title>
+    <link rel="stylesheet" href="style/collab.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="socials">
+            <a href="https://github.com/Stacyy-Were" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://pin.it/4jJTdSgis" target="_blank"><i class="fab fa-pinterest"></i></a>
+            <a href="https://www.instagram.com/stacy_.were" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/+254115018697" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="brand">Campus Compas</div>
+        <div class="nav-buttons">
+            <a href="index.html">HOME</a>
+            <a href="preferences.html">SCHOOLS</a>
+            <a href="contacts.php">CONTACTS</a>
+        </div>
+    </nav>
+
+    <div class="form-container">
+        <h2>Select Your School Preferences</h2>
+        <form class="form" action="recommend.php" method="POST">
+            <div class="form-group">
+                <label>Minimum Fees (KES)</label>
+                <input type="number" name="min_fees" min="0" placeholder="e.g. 30000">
+            </div>
+            <div class="form-group">
+                <label>Maximum Fees (KES)</label>
+                <input type="number" name="max_fees" min="0" placeholder="e.g. 100000">
+            </div>
+            <div class="form-group">
+                <label>Preferred Location</label>
+                <select name="preferred_location">
+                    <option value="">Any</option>
+                    <option value="Nairobi">Nairobi</option>
+                    <option value="Mombasa">Mombasa</option>
+                    <option value="Kisumu">Kisumu</option>
+                    <option value="Nakuru">Nakuru</option>
+                    <option value="Eldoret">Eldoret</option>
+                    <option value="Nyeri">Nyeri</option>
+                    <option value="Thika">Thika</option>
+                    <option value="Garissa">Garissa</option>
+                    <option value="Machakos">Machakos</option>
+                    <option value="Meru">Meru</option>
+                    <option value="Naivasha">Naivasha</option>
+                
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Curriculum</label>
+                <select name="preferred_curriculum[]" multiple>
+                    <option value="CBC">CBC</option>
+                    <option value="IGCSE">IGCSE</option>
+                    <option value="8-4-4">8-4-4</option>
+                    <option value="Other">Other</option>
+                </select>
+                <small>Hold Ctrl or Cmd to select multiple</small>
+            </div>
+            <div class="form-group">
+                <label>Extra Curricular Activities</label><br>
+                <input type="checkbox" name="extra_curricular[]" value="Football"> Football
+                <input type="checkbox" name="extra_curricular[]" value="Music"> Music
+                <input type="checkbox" name="extra_curricular[]" value="Drama"> Drama
+                <input type="checkbox" name="extra_curricular[]" value="Art"> Art
+                <input type="checkbox" name="extra_curricular[]" value="Debate"> Debate
+                <input type="checkbox" name="extra_curricular[]" value="Chess"> Chess
+                <input type="checkbox" name="extra_curricular[]" value="Swimming"> Swimming
+                <input type="checkbox" name="extra_curricular[]" value="Tennis"> Tennis
+                
+            </div>
+            <div class="form-group">
+                <label>Facilities</label><br>
+                <input type="checkbox" name="facilities[]" value="Library"> Library
+                <input type="checkbox" name="facilities[]" value="Science Lab"> Science Lab
+                <input type="checkbox" name="facilities[]" value="Swimming Pool"> Swimming Pool
+                <input type="checkbox" name="facilities[]" value="Computer Lab"> Computer Lab
+                <input type="checkbox" name="facilities[]" value="Sports Complex"> Sports Complex
+                <input type="checkbox" name="facilities[]" value="Art Studio"> Art Studio
+                <input type="checkbox" name="facilities[]" value="Playground"> Playground
+                <input type="checkbox" name="facilities[]" value="Sports Field"> Sports Field
+                
+            </div>
+            <div class="form-group">
+                <label>School Bus Required?</label>
+                <select name="needs_school_bus">
+                    <option value="">Any</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+            <button type="submit" class="form-submit-btn">Find Schools</button>
+        </form>
+    </div>
+</body>
+</html>
