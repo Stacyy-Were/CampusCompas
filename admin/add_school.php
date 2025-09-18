@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("issssssi", $admin_id, $name, $location, $curriculum, $fees, $extra, $facilities, $bus);
     $stmt->execute();
     $stmt->close();
-    header("Location: ../register_school.php"); // Redirect to register_school.php
+    header("Location: admin_schools.php");
     exit;
 }
 ?>
@@ -38,19 +38,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form method="POST">
             <label>School Name</label>
             <input type="text" name="name" required>
+            <br>
+
             <label>Location</label>
             <input type="text" name="location" required>
+            <br>
+
             <label>Curriculum</label>
             <input type="text" name="curriculum" required>
+            <br>
+
             <label>Fees</label>
             <input type="number" name="fees" required>
+            <br>
+
             <label>Extra Curricular</label>
             <input type="text" name="extra_curricular">
+            <br>
+
             <label>Facilities</label>
             <input type="text" name="facilities">
+            <br>
+            
             <label>
                 <input type="checkbox" name="has_school_bus"> School Bus Available
             </label>
+            <br>
+
             <button type="submit">Add School</button>
         </form>
     </div>

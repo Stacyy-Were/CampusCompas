@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($pass === "admin123") { 
             $_SESSION['admin_id'] = $row['id'];
             $_SESSION['admin_name'] = $row['full_name'];
-            header("Location: admin_schools.php");
+            header("Location: add_school.php");
             exit;
         }
     }
@@ -37,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form method="POST">
             <label>Email</label>
             <input type="email" name="email" required>
+            <br>
             <br>
             <label>Password</label>
             <input type="password" name="password" required>
