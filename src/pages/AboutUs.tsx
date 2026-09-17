@@ -73,7 +73,7 @@ export default function AboutUs() {
             <h2 className="mt-4 font-mono text-3xl md:text-4xl">More projects.</h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-white/70 md:text-lg">
-            {/* Replace this paragraph with your own story, background, and the ideas that keep you building. */}
+            {/* Replace ASAP - Placeholder*/}
             This is where I will share more about myself, what I have learned,
             and the kind of work I want to make next. For now, think of this as
             an open page: a small introduction before the bigger story arrives.
