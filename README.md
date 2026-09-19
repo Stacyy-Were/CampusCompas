@@ -1,7 +1,7 @@
 # Campus Compass
 
 A recommendation system that helps students and parents find the
-institution that fits them — by location, type, fees, and facilities.
+institution that fits them - by location, type, fees, and facilities.
 Schools can register and upload a license for verification before they
 appear in the system.
 
@@ -16,11 +16,11 @@ src/
   index.css             # Tailwind entry
   lib/
     supabase.ts          # Supabase client
-    types.ts             # Institution / School types
+    types.ts             # Institution
   components/
     Navbar.tsx
     InstitutionCard.tsx
-    ProtectedRoute.tsx    # Guards /admin — requires an authenticated admin
+    ProtectedRoute.tsx    # Aadmin - requires an authenticated admin
   pages/
     Home.tsx              # /
     FindInstitution.tsx    # /find — preference-based search
@@ -52,11 +52,10 @@ npm install
 3. Copy `.env.example` to `.env` and fill in your project URL and anon key
    (Project Settings → API).
 
-## 3. Add your background image
+## 3. Background image
 
-Drop your homepage image into `public/` and make sure the filename matches
-what `src/pages/Home.tsx` references (or edit that file to point at your
-own filename).
+Add homepage image into `public/` and make sure the filename matches
+what `src/pages/Home.tsx` references.
 
 ## 4. Run locally
 
