@@ -1,5 +1,5 @@
 # Campus Compass
-
+![ML](main/public/diagram.png)
 A recommendation system that helps students and parents find the
 institution that fits them - by location, type, fees, and facilities.
 Schools can register and upload a license for verification before they
